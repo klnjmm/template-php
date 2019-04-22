@@ -1,4 +1,3 @@
-PHP ?= $(shell which php7.0)
 COMPOSER ?= $(shell which composer)
 
 .PHONY: init
@@ -25,10 +24,14 @@ clean-composerlock:
     
 .PHONY: unit-tests
 unit-tests:
-	$(PHP) ./vendor/bin/atoum
+	./vendor/bin/atoum
+
+.PHONY: unit-tests-loop
+unit-tests-loop:
+	./vendor/bin/atoum -l
 
 .PHONY: code-sniffer
 code-sniffer:
-	$(PHP) vendor/bin/phpcs src -n --colors --ignore=Tests --error-severity=1 --standard=vendor/m6web/symfony2-coding-standard/Symfony2
+	./vendor/bin/phpcs
 
 
