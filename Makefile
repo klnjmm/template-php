@@ -27,8 +27,12 @@ clean-composerlock:
 unit-tests:
 	$(PHP) ./vendor/bin/atoum
 
+.PHONY: unit-tests-loop
+unit-tests-loop:
+        $(PHP) ./vendor/bin/atoum -l
+
 .PHONY: code-sniffer
 code-sniffer:
-	$(PHP) vendor/bin/phpcs src -n --colors --ignore=Tests --error-severity=1 --standard=vendor/m6web/symfony2-coding-standard/Symfony2
+	$(PHP) vendor/bin/phpcs src -n --colors --error-severity=1 --standard=PSR2
 
 
