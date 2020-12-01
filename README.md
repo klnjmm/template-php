@@ -47,9 +47,9 @@ Let's code !
 
 Here a few commands that can help you :
 
-* Launch unit tests in loop mode
+* Launch unit tests
 ```shell
-make unit-tests-loop
+make unit-tests
 ```
 
 * Launch code sniffer
