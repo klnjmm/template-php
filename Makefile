@@ -24,7 +24,7 @@ clean-composerlock:
     
 .PHONY: unit-tests
 unit-tests:
-	./vendor/bin/atoum
+	./vendor/bin/phpunit -c .phpunit.xml
 
 .PHONY: unit-tests-loop
 unit-tests-loop:
