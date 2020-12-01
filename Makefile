@@ -24,11 +24,7 @@ clean-composerlock:
     
 .PHONY: unit-tests
 unit-tests:
-	./vendor/bin/atoum
-
-.PHONY: unit-tests-loop
-unit-tests-loop:
-	./vendor/bin/atoum -l
+	./vendor/bin/pest
 
 .PHONY: code-sniffer
 code-sniffer:

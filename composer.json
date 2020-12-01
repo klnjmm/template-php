@@ -4,21 +4,25 @@
     "type": "project",
     "license": "MIT",
     "require": {
-        "php": "~7.1"
+        "php": "~8.1"
     },
     "require-dev": {
-        "atoum/atoum": "^3.2",
-        "atoum/stubs": "^2.5",
-        "squizlabs/php_codesniffer": "^3.4"
+        "squizlabs/php_codesniffer": "^3.4",
+        "pestphp/pest": "^1.21"
     },
     "autoload": {
         "psr-4": {
-            "Klnjmm\\": "src"
+            "App\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Klnjmm\\tests\\": "tests/"
+            "App\\tests\\": "tests/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
         }
     }
 }
