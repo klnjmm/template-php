@@ -3,6 +3,7 @@ COMPOSER ?= $(shell which composer)
 .PHONY: init
 init:
 	$(RM) -r .git
+	git init
 
 .PHONY: up
 up: install-vendor
@@ -26,8 +27,19 @@ clean-composerlock:
 unit-tests:
 	./vendor/bin/pest
 
+.PHONY: unit-tests-coverage
+unit-tests-coverage:
+	XDEBUG_MODE=coverage ./vendor/bin/pest --coverage
+
+.PHONY: mutation
+mutation:
+	./vendor/bin/infection --test-framework=pest --show-mutations
+
 .PHONY: code-sniffer
 code-sniffer:
 	./vendor/bin/phpcs
 
+.PHONY: code-sniffer-fix
+code-sniffer-fix:
+	./vendor/bin/phpcbf
 

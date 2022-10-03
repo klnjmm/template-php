@@ -1,2 +1,6 @@
 vendor/
 .phpunit.result.cache
+!var/cache/.gitkeep
+var/cache/*
+!var/log/.gitkeep
+var/log/*

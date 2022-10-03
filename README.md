@@ -2,7 +2,7 @@
 
 My template for PHP project or exercise (Kata)
 
-## Getting started on Unix or Mac OS X system
+## Getting started
 
 ### Clone the repository
 ```shell
@@ -19,32 +19,26 @@ cd your-project-name
     "license": "MIT",
 ```
 
-* Namespace name (here `Klnjmm`)
-```json
-    "autoload": {
-        "psr-4": {
-            "Klnjmm\\": "src"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Klnjmm\\tests\\": "tests/"
-        }
-    }
-```
-
 ### Init
-
+#### On Unix or Mac OS X system
 ```shell
 make init
 make up
 ```
 
-Let's code !
+#### On Windows
+```shell
+rmdir /s /q .git
+git init
+composer install
+```
 
 
-## Developing on Unix or Mac OS X system
+Let's code ! 🚀
 
+## Developing
+
+### On Unix or Mac OS X system
 Here a few commands that can help you :
 
 * Launch unit tests
@@ -52,9 +46,52 @@ Here a few commands that can help you :
 make unit-tests
 ```
 
+* Launch unit tests with coverage
+```shell
+make unit-tests-coverage
+```
+
+* Launch mutation testing
+```shell
+make mutation
+```
+
 * Launch code sniffer
 ```
 make code-sniffer
+```
+
+* Fix code style
+```
+make code-sniffer-fix
+```
+
+### On Windows
+Here a few commands that can help you :
+
+* Launch unit tests
+```shell
+vendor\bin\pest.bat
+```
+
+* Launch unit tests with coverage
+```shell
+vendor\bin\pest.bat --coverage
+```
+
+* Launch mutation testing (doesn't work on windows...)
+```shell
+vendor\bin\infection.bat --test-framework=pest --show-mutations
+```
+
+* Launch code sniffer
+```
+vendor\bin\phpcs.bat
+```
+
+* Launch code sniffer
+```
+vendor\bin\phpcbf.bat
 ```
 
 ## Licensing
